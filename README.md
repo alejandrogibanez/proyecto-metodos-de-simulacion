@@ -1,1 +1,38 @@
-\# Métodos de Simulación - Enunciado 5: Modelización Portuaria y Algoritmo Genético Este repositorio contiene la solución completa para el \*\*Enunciado 5\*\* de la asignatura \*\*Métodos de Simulación\*\* del Máster Universitario en Inteligencia Artificial (MUIA). El proyecto aborda la caracterización estadística de datos reales, la simulación de sucesos discretos de un sistema portuario mediante un Proceso de Poisson No Homogéneo (NHPP) y la resolución del problema de las 13 Reinas mediante un Algoritmo Genético permutacional. --- ## 📁 Estructura del Proyecto \`\`\`text . ├── fit\_desplazamientos.py # Ajuste estadístico y test de hipótesis K-S / Chi-cuadrado ├── simulate\_port.py # Motor de simulación de eventos discretos del puerto (NHPP) ├── solve\_13\_queens.py # Algoritmo Genético permutacional para las 13 Reinas + Gráfico PNG ├── generate\_port\_plots.py # Generador de gráficos de la simulación portuaria ├── generate\_ga\_plots.py # Generador de gráficos de convergencia del Algoritmo Genético ├── E5.desplazamientos.txt # Conjunto de datos empíricos de desplazamientos (N=511) │ ├── imagenes/ # Gráficos e ilustraciones exportados para la memoria │ ├── ajuste\_desplazamientos.png │ ├── tasa\_llegadas.png │ ├── evolucion\_puerto.png │ ├── comparativa\_escenarios.png │ ├── convergencia\_ag\_13reinas.png │ └── tablero\_13reinas.png │ ├── pdf/ # Código fuente de la memoria técnica en LaTeX │ └── memoria\_simulacion.tex │ └── README.md # Documentación principal del repositorio
+# Métodos de Simulación — Enunciado 5
+
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![LaTeX](https://img.shields.io/badge/LaTeX-Memoria_Técnica-1f4e79.svg)](pdf/memoria_simulacion.tex)
+
+Solución integral al **Enunciado 5** de la asignatura **Métodos de Simulación** del *Máster Universitario en Inteligencia Artificial (MUIA)*. 
+
+El repositorio cubre tres bloques analíticos y computacionales:
+1. **Ajuste y Bondad de Ajuste:** Caracterización estadística de tiempos empíricos mediante estimación por máxima verosimilitud (MLE) y contrastes Kolmogorov-Smirnov y $\chi^2$.
+2. **Simulación de Eventos Discretos:** Modelado estocástico de la operativa de un puerto comercial bajo un proceso de llegadas Poisson No Homogéneo (NHPP) con algoritmo de *thinning* (Lewis-Shedler).
+3. **Optimización Combinatoria:** Resolución del problema de las 13 Reinas mediante un Algoritmo Genético permutacional libre de conflictos diagonales.
+
+---
+
+## 📁 Estructura del Repositorio
+
+```text
+.
+├── E5.desplazamientos.txt      # Muestra empírica de tiempos de desplazamiento (N=511)
+├── fit_desplazamientos.py      # MLE y contrastes de hipótesis (Normal, Uniforme, Exp)
+├── simulate_port.py            # Simulación DES del puerto comercial y análisis de escenarios
+├── generate_port_plots.py      # Generador de figuras de la dinámica y métricas portuarias
+├── solve_13_queens.py          # AG permutacional (13 Reinas) y renderizado del tablero
+├── generate_ga_plots.py        # Curvas de convergencia y evolución del fitness del AG
+│
+├── imagenes/                   # Salidas gráficas empleadas en la memoria técnica
+│   ├── ajuste_desplazamientos.png
+│   ├── tasa_llegadas.png
+│   ├── evolucion_puerto.png
+│   ├── comparativa_escenarios.png
+│   ├── convergencia_ag_13reinas.png
+│   └── tablero_13reinas.png
+│
+├── pdf/                        # Fuente y compilación de la memoria en LaTeX
+│   └── memoria_simulacion.tex
+│
+└── README.md
